@@ -9,16 +9,16 @@ on:
 jobs:
   intel:
     name: Builds OS X Intel Native CLI
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: "⬇ Checkout the repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: "☕️ Setup GraalVM CE"
-        uses: graalvm/setup-graalvm@v1.2.3
+        uses: graalvm/setup-graalvm@v1.2.5
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'graalvm-community'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -55,9 +55,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: "☕️ Setup GraalVM CE"
-        uses: graalvm/setup-graalvm@v1.2.3
+        uses: graalvm/setup-graalvm@v1.2.5
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'graalvm-community'
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
